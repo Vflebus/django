@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="WGMa6bMH3XKx-l1u3tAzXwBlpbmeWvDlfJJuTCqSma8" />
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'assets/img/favicon.ico' %}">
+    <title>Vincent Flebus - Web Developper</title>
+</head>
+
+<body>
+    <div class="lightball">
+        <div class="allLightballs lightball_orange"></div>
+        <div class="allLightballs lightball_yellow"></div>
+        <div class="allLightballs lightball_blue"></div>
+    </div>
+    <svg id="lightball_pathes" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1658.4px" height="1029.9px"
+        viewBox="0 0 1658.4 1029.9" style="enable-background:new 0 0 1658.4 1029.9;" xml:space="preserve">0
+        <path class="st0" id="path_yellow"
+            d="M130.8,2.2c29.4,5.3,65.7,24.4,79,58c18.4,46.8-26.2,74.8-11,123c14,44.5,69.1,74.8,115,75 c34.6,0.1,46-17,106-49c70.9-37.9,119.6-63.8,178-61c87,4.2,144,69.7,151,78c15.3,18.1,53.9,63.8,50,126c-5,79.6-75.9,126.2-106,146 c-26.5,17.4-85.2,56-144,39c-39-11.3-39.1-35.8-87-61c-7.6-4-75.9-39-141-22c-103.3,26.9-137.1,168.1-143,193 c-8.8,36.6-36.3,179.8,53,267c48.6,47.4,107.8,54.8,190,65c75,9.3,170.2,21.1,267-32c102.3-56.2,145.8-151.6,161-185 c35.9-78.9,12-90.3,52-212c22.7-68.9,46.4-138.6,106-208c22.6-26.4,65.2-74.9,137-108c92.8-42.8,177.6-33.6,247-26 c55.2,6,145.3,16.9,238,78c36.8,24.3,94.2,63.1,132,138c12.2,24.2,38.6,78.2,33,151c-1.7,22.6-7,90.7-57,145 c-69.2,75-175.6,70.8-221,69c-99.5-4-181.1-47.5-214-65c-71.2-38-86.4-65.2-140-70c-14.7-1.3-90.7-6.1-142,52 c-35.9,40.7-54.1,105.8-29,160c32.9,71,120.3,80.2,156,84c20.6,2.2,110.3,11.7,179-53c46.5-43.8,58-97.7,61-116 c9.1-55.5-7.7-97.9-22-134c-37-93.3-104-146.3-132-166c-20.8-14.6-70.1-46.2-141-61c-66.1-13.8-118.6-6.3-147-2 c-28.1,4.3-63.5,12.4-126,38c-101.7,41.7-122.2,67.3-179,92c-143.4,62.5-291.8,21.3-372-1c-110.3-30.6-154.3-72.4-165-83 c-41.3-40.8-60.3-85.3-71-111C6.2,291.7,4.3,242,1.8,175.2c-2.5-66-3.3-99.5,16-126C39.7,19.2,83-6.4,130.8,2.2z" />
+        <path class="st0" id="path_orange"
+            d="M1428.7,10.7c-10.9-9.2-24-12-74-9c-87.2,5.3-106.8,17.3-115,23c-18.4,12.7-28,27-30,30 c-8.4,12.7-17.7,32.9-18,72c-0.4,48.8,13.4,85.4,30,128c11.7,30.2,26.3,66.9,57,107c14.9,19.4,29.4,34.3,38,43 c34.8,35.3,48,38.9,70,62c10.7,11.2,38.8,40.7,51,85c18.3,66.1-10.3,123.2-16,134c-29.4,56.1-78.3,79.5-101,90 c-82.9,38.3-161.9,15.7-189,8c-33.8-9.7-92.4-26.4-130-78c-27.3-37.5-13.5-52.1-46-135c-24.3-61.9-39.2-98.4-77-125 c-7.6-5.4-51.9-35.5-110-28c-48.2,6.2-78.3,34.8-106,61c-60.1,57-81.1,122.5-96,169c-17.7,55.2-29.5,92.1-16,135 c2.6,8.2,19.8,33.9,54,85c34.5,51.5,46.7,67.7,66,86c24.7,23.4,37.9,35.8,60,41c35.8,8.3,82.9-5.3,107-43c26.1-40.7,9.8-85.3,7-93 c-12.2-33.4-41.5-63.7-80-72c-44.4-9.5-87.5,15-110,40c-26,28.9-22.5,56.4-63,99c-10.3,10.8-19.4,18.4-25,23c0,0-38.2,31.5-84,50 c-35.3,14.2-80,15-168,16c-107.9,1.2-81.6-6.1-144-3c-36.5,1.8-69.6,5.5-110-10c-16.3-6.3-36.2-14.2-49-34 c-17.6-27.3-10.4-59.8-5-83c4.9-21,13.8-45,61-113c48.3-69.6,54.1-66.3,75-106c21.2-40.2,35.2-81.5,40-96c3.7-11.1,10.3-30.9,16-55 c10.9-46,12.2-80.4,14-138c0.7-22.2,0.2-20-2-142c-1.4-78-1.5-96.2-14-122c-6-12.4-30.1-62-70-64c-31-1.6-54.6,26.4-66,40 c-6.3,7.4-28.7,35.6-39,107c-7.3,50.7-3.5,89.4,2,143c4.8,46.2,8.3,79.9,20,125c21.1,81.3,53.4,139.9,69,166 c15.3,25.7,43.4,72.2,94,121c26,25.1,60,57.3,114,83c34.2,16.2,76.2,36.2,134,34c79.1-3,132.5-45.5,145-56c14.2-11.9,64-56.4,80-131 c6.5-30.2,16.1-74.8-10-115c-3.6-5.5-33.9-50.7-84-50c-48.1,0.7-81.6,43.3-93,77c-1.6,4.6-7.4,22.9-5,47c3.6,36.4,24.6,72.1,56,91 c21.3,12.8,48.8,12.7,103,12c57.8-0.8,86.6-1.2,107-12c53-28.2,70.6-92.1,78-119c13.9-50.6-1.5-55.9,13-89 c17.1-39.1,53.9-61.2,127-104c63.9-37.4,79-36.6,97-63c23.3-34.1,8.4-50.7,32-93c4.3-7.7,34-59.3,91-80c41-14.9,51.1,2.5,124-7 c49.5-6.4,81.4-10.6,106-37c21.8-23.4,34-60.1,26-93C1445.7,37.4,1441.9,21.9,1428.7,10.7z" />
+        <path class="st0" id="path_blue"
+            d="M744.6,33.5c0.7,9.9-22,9.6-38,32c-9.7,13.6-30.8,54.8,36,188c61,121.8,95,120.1,135,216 c25.6,61.3,32.9,112.9,42,177c10,70.5,18.2,128.1,6,201c-11.3,67.6-26.5,158.3-99,198c-41.7,22.8-106.2,30.9-151-2 c-43.7-32.1-49.1-88.8-52-119c-3.5-36.5,3.6-50.3,29-166c21.3-97.1,25.1-127,8-156c-11-18.7-33.5-41.7-58-40 c-38.3,2.6-60.1,64.3-67,84c-18.9,53.6-14.1,102.2-8,158c8.6,79.3,23.2,93.8,12,137c-4,15.4-15.8,60.8-55,81 c-19.1,9.9-38.8,9.3-78,8c-45.7-1.5-56.1-11.5-60-16c-8-9.2-13-23.9-9-37c5.2-16.9,23.4-24.3,35-29c39-15.8,62.5,0.6,77-16 c11.7-13.4,5.8-34.9,5-38c-6.7-24.4-30.2-34.2-37-37c-20-8.3-37.6-4.6-60,0c-22.9,4.7-44.6,9.2-59,27c-8.2,10.1-11.2,21.2-14,44 c-9,72.9,5.9,88.4-7,114c-17.1,33.9-61.5,42.9-82,47c-16.8,3.4-77.9,15.7-108-22c-12-15-19.1-37.9-14-59c6.9-28.4,29.8-27.7,46-61 c9.7-19.9,18.8-55.6,3-78c-12.7-17.9-28.9-9.7-57-33c-21.7-18-31.3-38.8-34-45c-12.9-29.9-9.3-56.9-8-66c2.8-19.6,12.3-36.7,31-70 c24.1-42.9,29.2-43.5,43-73c20.5-44.1,20.2-66.8,20-73c-0.8-23-8.4-40-12-48c-14.7-32.4-38.9-52.1-60-69c-29.1-23.3-46.7-28.9-45-36 c2.1-9,31.6-5.9,74-10c63.1-6.1,108.6-23.5,120-28c6.9-2.7,65.3-26.5,102-67c14.6-16.1,23.5-25.9,27-42c3-13.5,0.3-22.8,8-31 c9.2-9.8,19.9-4,27-13c8.9-11.3-3.8-26,5-37c7.7-9.7,21-2.8,29-13c7.6-9.7-1.2-20.1,6-29c8.6-10.6,25.9-1.6,35-11 c10.1-10.4-3.2-29.3,0-42C446.8-18.2,742.2-2.1,744.6,33.5z" />
+    </svg>
+    <img src="{% static 'assets/img/cursor.svg' %}" alt="" id="cursor">
+    <div class="animator">
+        <ul class="nav">
+            <li><button id="accueil" onclick="goToSection(0)">Vincent Flebus</button></li>
+            <li><button onclick="goToSection(1)">About</button></li>
+            <li><button onclick="goToSection(3)">Projects</button></li>
+            <li><button onclick="goToSection(9)">Contact</button></li>
+        </ul>
+
+        <header class="panel noWidthHeight">
+            <div class="upperHeader">
+                <h1>VINCENT FLEBUS</h1>
+            </div>
+            <div class="lowerHeader">
+                <h1>VINCENT FLEBUS</h1>
+                <h3>Full-stack Web Developper</h3>
+                <img src="{% static 'assets/img/scroll-indicator.png' %}" alt="">
+            </div>
+        </header>
+
+        <section class="about panel noWidthHeight">
+            <div class="left">
+                <img src="{% static 'assets/img/IMG_1049_rognee.jpg' %}" alt="">
+            </div>
+            <div class="right">
+                <h2 class="aboutTitle">Hello !</h2>
+                <div class="textContainer">
+                    <div class="container container_intro">
+                        <p class="intro">I'm Vincent,</p>
+                        <p class="intro">a front-end oriented</p>
+                        <p class="intro">full-stack web Developper</p>
+                        <p class="intro">currently living in Rennes.</p>
+                    </div>
+                    <div class="container container_follow">
+                        <p class="follow">
+                            After many years spent working in the animation and education fields, I discovered and fell
+                            in love with web developpment. I learned how to create websites with the O'clock school and
+                            never looked back since.
+                        </p>
+                        <p class="follow">
+                            I love creating new things, and always try to give my websites a strong identity. <br />
+                            I mostly use vanilla Javascript or React for bigger projects. I also know my way around
+                            back-end, where I use NodeJs or PHP.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="logosContainer">
+                    <div class="logosInner">
+                        <div class="logos">
+                            <img src="{% static 'assets/img/logos/logo HTML.png' %}" alt="HTML" title="HTML">
+                            <img src="{% static 'assets/img/logos/logo CSS.png' %}" alt="CSS" title="CSS">
+                            <img src="{% static 'assets/img/logos/sass.png' %}" alt="Sass" title="Sass">
+                            <img src="{% static 'assets/img/logos/logo JS.png' %}" alt="Javascript" title="Javascript">
+                            <img src="{% static 'assets/img/logos/logo-react.png' %}" alt="React" title="React">
+                            <img src="{% static 'assets/img/logos/Logo GIT.png' %}" alt="GIT" title="GIT">
+                            <img src="{% static 'assets/img/logos/LogoPostgreSQL.png' %}" alt="PostgreSQL" title="PostreSQL">
+                            <img src="{% static 'assets/img/logos/GSAP.png' %}" alt="GSAP" title="GSAP">
+                        </div>
+                        <div class="logos">
+                            <img src="{% static 'assets/img/logos/logo HTML.png' %}" alt="HTML" title="HTML">
+                            <img src="{% static 'assets/img/logos/logo CSS.png' %}" alt="CSS" title="CSS">
+                            <img src="{% static 'assets/img/logos/sass.png' %}" alt="Sass" title="Sass">
+                            <img src="{% static 'assets/img/logos/logo JS.png' %}" alt="Javascript" title="Javascript">
+                            <img src="{% static 'assets/img/logos/logo-react.png' %}" alt="React" title="React">
+                            <img src="{% static 'assets/img/logos/Logo GIT.png' %}" alt="GIT" title="GIT">
+                            <img src="{% static 'assets/img/logos/LogoPostgreSQL.png' %}" alt="PostgreSQL" title="PostreSQL">
+                            <img src="{% static 'assets/img/logos/GSAP.png' %}" alt="GSAP" title="GSAP">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projectsContact">
+            <div class="title panel">
+                <h2 id="projectsTitle">Projects</h2>
+                <button class="rightArrow" onclick="scrollToRightSection()">&#10095;</button>
+            </div>
+
+            <div class="panel project">
+                <div class="description">
+                    <h3 id="radamir">Radamir</h3>
+                    <p>
+                        Support website for the roleplaying game. <br />
+                        Radamir allows an easy access to the universe's lore, as well as a campaign tool to take notes
+                        and share them with your party.
+                        <br />
+                        <br />
+                        Video presentation available <a href="https://www.youtube.com/watch?v=jrl_DBlTLyM&t=2557s" target="_blank"
+                            class="projectLink radamir">here</a>
+                    </p>
+                </div>
+                <div class="image">
+                    <a href="https://radamir.net/" target="_blank">
+                        <img src="{% static 'assets/img/radamir1.jpg' %}" alt="Radamir intro image">
+                    </a>
+                </div>
+                <button class="leftArrow" onclick="scrollToLeftSection()">&#10094;</button>
+                <button class="rightArrow" onclick="scrollToRightSection()">&#10095;</button>
+            </div>
+
+            <div class="panel project">
+                <div class="description">
+                    <h3 id="omemory">O'memory</h3>
+                    <p>
+                        Fully fonctionnal memory game designed for the O'clock school. <br />
+                        Includes a database to be able to keep track of scores.
+                    </p>
+                </div>
+                <div class="image">
+                    <a href="https://github.com/Vflebus/o-memory" target="_blank">
+                        <img src="{% static 'assets/img/omemoryCropped.jpg' %}" alt="O'memory intro image">
+                    </a>
+                </div>
+                <button class="leftArrow" onclick="scrollToLeftSection()">&#10094;</button>
+                <button class="rightArrow" onclick="scrollToRightSection()">&#10095;</button>
+            </div>
+
+            <!-- <div class="panel project">
+                <div class="description">
+                    <h3 id="snowyCavern">Snow Cavern</h3>
+                    <p>
+                        This project was meant to learn parallax effects and the gsap library.<br />
+                        The main goal was to create a small animation playing with perspective.
+                    </p>
+                </div>
+                <div class="image">
+                    <a href="https://github.com/Vflebus/gsap-parallax" target="_blank">
+                        <img src="{% static 'assets/img/snowCavern.jpg' %}" alt="Snow Cavern intro image">
+                    </a>
+                </div>
+                <button class="leftArrow" onclick="scrollToLeftSection()">&#10094;</button>
+                <button class="rightArrow" onclick="scrollToRightSection()">&#10095;</button>
+            </div> -->
+
+            <div class="panel project">
+                <div class="description">
+                    <h3 id="pokedex">Pokedex</h3>
+                    <p>
+                        This project was my first attempt at Vue.js !<br />
+                        It took me about half a day to build. I used the free api at pokeapi.co
+                    </p>
+                </div>
+                <div class="image">
+                    <a href="https://vflebus.github.io/Pokedex-Vue/" target="_blank">
+                        <img src="{% static 'assets/img/pokedex.jpg' %}" alt="Pokedex intro image">
+                    </a>
+                </div>
+                <button class="leftArrow" onclick="scrollToLeftSection()">&#10094;</button>
+                <button class="rightArrow" onclick="scrollToRightSection()">&#10095;</button>
+            </div>
+
+            <div class="panel project">
+                <div class="description">
+                    <h3 id="checkpointData">Checkpoint Data</h3>
+                    <p>
+                        This project was made for a local esport association.<br />
+                        Its goal is to list tournaments hosted on the <a href="https://challonge.com" target="_blank"
+                            class="projectLink checkpointData">challonge.com</a> website.
+                        Season 1 data is not yet available since it was hosted by other means.
+                    </p>
+                </div>
+                <div class="image">
+                    <a href="https://ssbzh.netlify.app/" target="_blank">
+                        <img src="{% static 'assets/img/checkpointData.jpg' %}" alt="Pokedex intro image">
+                    </a>
+                </div>
+                <button class="leftArrow" onclick="scrollToLeftSection()">&#10094;</button>
+                <button class="rightArrow" onclick="scrollToRightSection()">&#10095;</button>
+            </div>
+
+            <div class="panel project">
+                <div class="description">
+                    <h3 id="lePort">Le Port</h3>
+                    <p>
+                        This project was my first attempt at PHP.
+                        The purpose of this application is to manage a port and the boats that stay there.
+
+                        I did not work a lot on the css but what i wanted to archieve was mainly the back-end as this app was made for a purpose of discovering the website.
+                    </p>
+                </div>
+                <div class="image">
+                    <a href="https://vflebus.alwaysdata.net/Leport/" target="_blank">
+                        <img src="{% static 'assets/img/LePort.png' %}" alt="Le Port intro image">
+                    </a>
+                </div>
+                <button class="leftArrow" onclick="scrollToLeftSection()">&#10094;</button>
+                <button class="rightArrow" onclick="scrollToRightSection()">&#10095;</button>
+            </div>
+
+            <section class="contact panel">
+                <a href="mailto:vflebus@gmail.com">
+                    <h2 class="contactTitle">E-MAIL ME !</h2>
+                </a>
+                <a href="./assets/CV_2021_dev_web.pdf" target="_blank">
+                    <h2 class="contactTitle">CHECK MY RESUME !</h2>
+                </a>
+            </section>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
