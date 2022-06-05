@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap");
+@font-face {
+  font-family: break;
+  src: url(../assets/fonts/break\ regular.ttf);
+}
+@font-face {
+  font-family: yeager;
+  src: url(../assets/fonts/Yeager-Regular.otf);
+}
+@font-face {
+  font-family: "kingdom";
+  src: url(../assets/fonts/THE\ LAST\ KINGDOM.ttf);
+}
+@font-face {
+  font-family: "pokemon";
+  src: url(../assets/fonts/Pokemon\ Solid.ttf);
+}
+@font-face {
+  font-family: "bohem";
+  src: url(../assets/fonts/Bohem\ Press\ Free.otf);
+}
+#lightball_pathes {
+  position: absolute;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#lightball_pathes #path_yellow {
+  stroke: #ffcc00;
+  stroke: transparent;
+}
+#lightball_pathes #path_orange {
+  stroke: #ff7e00;
+  stroke: transparent;
+}
+#lightball_pathes #path_blue {
+  stroke: cyan;
+  stroke: transparent;
+}
+
+body {
+  --scrollerColor: #ffcc00;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollerColor) darkgrey;
+  font-family: roboto, serif;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 15px;
+}
+body::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--scrollerColor);
+  border-radius: 20px;
+}
+body #cursor {
+  position: absolute;
+  z-index: 1000;
+  fill: none;
+  stroke: white;
+  transform: translate(-50%, -50%);
+  width: 10vw;
+  stroke: white;
+  pointer-events: none;
+  display: none;
+  mix-blend-mode: difference;
+}
+body .lightball {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  pointer-events: none;
+  position: fixed;
+  z-index: 1000;
+}
+body .lightball .lightball_orange {
+  width: 0;
+  height: 0;
+  box-shadow: 5px 5px 17px 5px white, -5px -5px 17px 5px white, 5px -5px 17px 5px white, -5px 5px 17px 5px white, 5px 5px 17px 10px #ff7e00, -5px -5px 17px 10px #ff7e00, 5px -5px 17px 10px #ff7e00, -5px 5px 17px 10px #ff7e00;
+}
+body .lightball .lightball_yellow {
+  width: 0;
+  height: 0;
+  box-shadow: 5px 5px 17px 5px white, -5px -5px 17px 5px white, 5px -5px 17px 5px white, -5px 5px 17px 5px white, 5px 5px 17px 10px #ffcc00, -5px -5px 17px 10px #ffcc00, 5px -5px 17px 10px #ffcc00, -5px 5px 17px 10px #ffcc00;
+}
+body .lightball .lightball_blue {
+  width: 0;
+  height: 0;
+  box-shadow: 5px 5px 17px 5px white, -5px -5px 17px 5px white, 5px -5px 17px 5px white, -5px 5px 17px 5px white, 5px 5px 17px 10px orange, -5px -5px 17px 10px orange, 5px -5px 17px 10px orange, -5px 5px 17px 10px orange;
+}
+body .animator {
+  max-width: 100vw;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+body .animator .nav {
+  position: fixed;
+  top: 2vh;
+  right: 2vw;
+  z-index: 5;
+  display: flex;
+  column-gap: 1vw;
+}
+body .animator .nav button {
+  font-family: roboto, serif;
+  background: transparent;
+  border: none;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  font-size: 1vw;
+  cursor: pointer;
+}
+body .animator .panel {
+  position: relative;
+}
+body .animator .noWidthHeight {
+  width: 0vw;
+  height: 0vh;
+}
+body .animator h1,
+body .animator h2 {
+  font-family: break, serif;
+  font-size: 6vw;
+  text-align: center;
+}
+body .animator h1 {
+  color: #ffcc00;
+  text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+}
+body .animator header {
+  z-index: 3;
+}
+body .animator header .upperHeader,
+body .animator header .lowerHeader {
+  width: 100vw;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+body .animator header .upperHeader h1,
+body .animator header .lowerHeader h1 {
+  position: absolute;
+  left: 50%;
+  word-spacing: 1vw;
+}
+body .animator header .upperHeader {
+  background-color: #232835;
+}
+body .animator header .upperHeader h1 {
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+body .animator header .lowerHeader {
+  background-color: #2e3445;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .animator header .lowerHeader h1 {
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+body .animator header .lowerHeader h3 {
+  margin-top: 6vw;
+  color: white;
+  font-family: break;
+  font-size: 2vw;
+  font-style: italic;
+  word-spacing: 1vw;
+}
+body .animator header .lowerHeader img {
+  width: 2vw;
+  margin-top: 5vh;
+  opacity: 0.5;
+  animation: scrollIndicator 2.5s infinite;
+}
+@keyframes scrollIndicator {
+  50% {
+    transform: translateY(2vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+body .animator .about {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+body .animator .about .left {
+  background: linear-gradient(#232835, #606265);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+body .animator .about .left img {
+  max-width: 40vw;
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+body .animator .about .right {
+  position: relative;
+  background: linear-gradient(#232835, #606265);
+  width: 50vw;
+  flex-grow: 1;
+  padding-left: 5vw;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vw;
+  overflow: hidden;
+  padding-right: 4vw;
+}
+body .animator .about .right .textContainer {
+  display: flex;
+}
+body .animator .about .right .textContainer .container {
+  min-width: 100%;
+}
+body .animator .about .right .textContainer .container_follow {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2vw;
+}
+body .animator .about .right .textContainer .container .follow {
+  opacity: 0;
+  font-size: 2vw;
+  line-height: normal;
+}
+body .animator .about .right h2 {
+  width: fit-content;
+}
+body .animator .about .right p {
+  color: white;
+  font-size: 4vw;
+}
+body .animator .about .right .logosContainer {
+  position: relative;
+  align-self: center;
+  margin-top: 15vh;
+  width: 60%;
+  height: 7vh;
+  display: flex;
+  column-gap: 1vw;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 3.5vh;
+}
+body .animator .about .right .logosContainer .logosInner {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  animation: carousel 8s linear infinite;
+}
+body .animator .about .right .logosContainer .logosInner:hover {
+  animation-play-state: paused;
+}
+body .animator .about .right .logosContainer .logosInner .logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+body .animator .about .right .logosContainer .logosInner img {
+  max-height: 70%;
+  max-width: 10%;
+}
+body .animator .about .right .logosContainer .logosInner img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+@keyframes carousel {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+body .animator .projectsContact {
+  position: absolute;
+  z-index: 1;
+  min-width: 100vw;
+  height: 100vh;
+  background: #191919;
+  background: #606265;
+  display: flex;
+}
+body .animator .projectsContact #projectsTitle {
+  font-size: 10vw;
+}
+body .animator .projectsContact .panel {
+  width: 100vw;
+  height: 100vh;
+}
+body .animator .projectsContact .panel .rightArrow,
+body .animator .projectsContact .panel .leftArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 3vw;
+  cursor: pointer;
+}
+body .animator .projectsContact .panel .rightArrow,
+body .animator .projectsContact .panel .leftArrow {
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+body .animator .projectsContact .panel .rightArrow {
+  right: 0.5vw;
+}
+body .animator .projectsContact .panel .rightArrow:hover {
+  animation: animateRightArrow 2.5s infinite;
+}
+body .animator .projectsContact .panel .leftArrow {
+  left: 0.5vw;
+}
+body .animator .projectsContact .panel .leftArrow:hover {
+  animation: animateLeftArrow 2.5s infinite;
+}
+@keyframes animateRightArrow {
+  50% {
+    transform: translate(-1vw, -50%);
+  }
+}
+@keyframes animateLeftArrow {
+  50% {
+    transform: translate(1vw, -50%);
+  }
+}
+body .animator .projectsContact .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .animator .projectsContact .project {
+  display: flex;
+  overflow: hidden;
+}
+body .animator .projectsContact .project .description {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+}
+body .animator .projectsContact .project .description h3 {
+  position: absolute;
+  top: 5vh;
+  font-size: 4vw;
+  color: white;
+  font-family: roboto;
+  max-width: 80%;
+  text-align: center;
+}
+body .animator .projectsContact .project .description h3#radamir {
+  color: #a87e54;
+  font-family: "IM Fell English SC", serif;
+}
+body .animator .projectsContact .project .description h3#omemory {
+  color: #0abda2;
+}
+body .animator .projectsContact .project .description h3#snowyCavern {
+  font-family: "kingdom", serif;
+}
+body .animator .projectsContact .project .description h3#pokedex {
+  color: #226ef2;
+}
+body .animator .projectsContact .project .description h3#checkpointData {
+  font-family: "bohem", serif;
+  color: #FD5E53;
+}
+body .animator .projectsContact .project .description h3#lePort {
+  color: #00FFFF;
+}
+body .animator .projectsContact .project .description p {
+  width: 70%;
+  color: lightgray;
+  font-size: 2vw;
+}
+body .animator .projectsContact .project .description p .projectLink {
+  text-decoration: underline;
+}
+body .animator .projectsContact .project .description p .projectLink.radamir {
+  color: #a87e54;
+}
+body .animator .projectsContact .project .description p .projectLink.checkpointData {
+  color: #FD5E53;
+}
+body .animator .projectsContact .project .image {
+  height: 100vh;
+  aspect-ratio: 4/3;
+  background-color: lightgrey;
+  max-width: 75vw;
+}
+body .animator .projectsContact .project .image a {
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  display: flex;
+  align-items: center;
+}
+body .animator .projectsContact .project .image img {
+  width: 100%;
+}
+body .animator .projectsContact .contact {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 4vw;
+}
+body .animator .projectsContact .contact .contactTitle {
+  color: #2d2d2d;
+  color: #ffcc00;
+  text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+}
+body .animator .projectsContact .contact .contactTitle:hover {
+  text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 15px #ff4444, 0 0 15px #ff4444, 0 0 15px #ff4444, 0 2px 3px #000;
+}
+body .animator .projectsContact .contact .introContact {
+  color: white;
+  font-weight: bold;
+  font-size: 4vw;
+  margin-top: 20vh;
+  margin-left: 10vw;
+}
+body .deviceWarning {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  body .lightball .lightball_orange {
+    box-shadow: 2px 2px 17px 2px white, -2px -2px 17px 2px white, 2px -2px 17px 2px white, -2px 2px 17px 2px white, 2px 2px 10px 5px #ff7e00, -2px -2px 10px 5px #ff7e00, 2px -2px 10px 5px #ff7e00, -2px 2px 10px 5px #ff7e00;
+  }
+  body .lightball .lightball_yellow {
+    box-shadow: 2px 2px 17px 2px white, -2px -2px 17px 2px white, 2px -2px 17px 2px white, -2px 2px 17px 2px white, 2px 2px 10px 5px #ffcc00, -2px -2px 10px 5px #ffcc00, 2px -2px 10px 5px #ffcc00, -2px 2px 10px 5px #ffcc00;
+  }
+  body .lightball .lightball_blue {
+    box-shadow: 2px 2px 17px 2px white, -2px -2px 17px 2px white, 2px -2px 17px 2px white, -2px 2px 17px 2px white, 2px 2px 10px 5px orange, -2px -2px 10px 5px orange, 2px -2px 10px 5px orange, -2px 2px 10px 5px orange;
+  }
+  body .animator .nav button {
+    font-size: 0.7rem;
+    text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
+  }
+  body .animator header h1 {
+    text-shadow: 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    font-size: 2rem;
+    width: 100%;
+  }
+  body .animator header .lowerHeader h3 {
+    font-size: 1.5rem;
+  }
+  body .animator header .lowerHeader img {
+    width: 1.5rem;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  body .animator .about .right .logosContainer {
+    margin-top: 5vh;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  body .animator .about .left {
+    display: none;
+  }
+  body .animator .about .right {
+    height: 100vh;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+    color: white;
+  }
+  body .animator .about .right h2 {
+    font-size: 5rem;
+    text-shadow: 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+  }
+  body .animator .about .right .textContainer {
+    text-align: center;
+  }
+  body .animator .about .right .textContainer .container .intro {
+    font-size: 2rem;
+  }
+  body .animator .about .right .textContainer .container_follow {
+    align-items: center;
+  }
+  body .animator .about .right .textContainer .container_follow .follow {
+    font-size: 1rem;
+  }
+  body .animator .about .right .logosContainer {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body .animator .projectsContact {
+    height: unset;
+    flex-direction: column;
+  }
+  body .animator .projectsContact .panel .rightArrow, body .animator .projectsContact .panel .leftArrow {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  body .animator .projectsContact .project {
+    flex-direction: column;
+  }
+  body .animator .projectsContact .project .description {
+    padding-top: 10vh;
+    height: 40vh;
+  }
+  body .animator .projectsContact .project .description h3 {
+    position: unset;
+    font-size: 3.5rem;
+  }
+  body .animator .projectsContact .project .description p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  body .animator .projectsContact .project .image {
+    max-width: 100vw;
+    height: unset;
+    aspect-ratio: unset;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body .animator .projectsContact .contact .contactTitle {
+    text-shadow: 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
