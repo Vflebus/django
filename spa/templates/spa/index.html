@@ -1,0 +1,12 @@
+{% extends 'spa/base.html' %}
+
+{% block content %}
+<h1>Tous nos animaux</h1>
+
+{% for animal in allAnimals %}
+
+<h2>{{ animal.name }}</h2>
+<img src="{{ animal.picture }}" alt="{{ animal.name }}" style="max-width: 250px;">
+{% endfor %}
+
+{% endblock %}
