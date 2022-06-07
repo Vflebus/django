@@ -24,12 +24,14 @@ environ.Env.read_env(env_file=str(BASE_DIR / "portfolio" / ".env"))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u1m-b)xtz6&wpv(2vfmvhr_gs4de8q1_$$ibp-zth5%7rg5-m='
+# SECRET_KEY = 'u1m-b)xtz6&wpv(2vfmvhr_gs4de8q1_$$ibp-zth5%7rg5-m=z'
+SECRET_KEY = os.environ.get('SECRET_KEY_VALUE')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = ((os.environ.get('DEBUG_VALUE')) == 'True')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vflebus-django.herokuapp.com']
 
 
 # Application definition
@@ -53,6 +55,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
